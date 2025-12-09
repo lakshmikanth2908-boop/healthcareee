@@ -1,5 +1,5 @@
 import streamlit as st
-from google import genai
+import google.generativeai as genai
 from google.genai import types
 
 # --- 1. CONFIGURATION AND SAFETY ---
@@ -133,4 +133,5 @@ if prompt := st.chat_input("Ask a general health question..."):
             message_placeholder.markdown(full_response)
 
     # 3. Append the full assistant response to session state for history persistence
+
     st.session_state.messages.append({"role": "assistant", "content": full_response})
